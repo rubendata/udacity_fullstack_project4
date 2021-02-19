@@ -1,0 +1,5 @@
+EXTERNAL-IP     
+a964f899622f849d0b7d27454f5f3556-195943014.us-west-2.elb.amazonaws.com
+
+export TOKEN=`curl -d '{"email":"email","password":"PASSWORD"}' -H "Content-Type: application/json" -X POST a964f899622f849d0b7d27454f5f3556-195943014.us-west-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'a964f899622f849d0b7d27454f5f3556-195943014.us-west-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
